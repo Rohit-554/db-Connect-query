@@ -14,7 +14,7 @@ class ApiResponse<T> {
 }
 
 class ApiService {
-  static const String baseUrl = 'http://3.109.213.8';
+  static const String baseUrl = 'http://127.0.0.1:5000';
   static const String connectUrl = '$baseUrl/connect_old';
   static const String chatUrl = '$baseUrl/generate_response';
   static const String closeConnectionUrl = '$baseUrl/close_connection';
@@ -75,7 +75,6 @@ class ApiService {
       {required String chatId, required String query}) async {
     final Map<String, String> body = {
       "query": query,
-      "chat_id": chatId,
     };
     List<String> responseList = [];
 
