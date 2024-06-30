@@ -39,7 +39,7 @@ class ApiService {
       if (response.statusCode == 200) {
         final data = response.data;
         print('Response data: $data');
-
+        final successResponse = SuccessResponse.fromJson(data);
         if (data is Map<String, dynamic> && data.containsKey('chat_id')) {
           final successResponse = SuccessResponse.fromJson(data);
           return ApiResponse(data: successResponse.chatId);
